@@ -162,7 +162,6 @@ class AccountServiceTest {
 
         given(accountUserRepository.findById(anyLong()))
                 .willReturn(Optional.empty());
-        ArgumentCaptor<Account> captor = ArgumentCaptor.forClass(Account.class);
 
         //when
         AccountException exception = assertThrows(AccountException.class,
@@ -213,7 +212,6 @@ class AccountServiceTest {
                         .balance(0L)
                         .accountNumber("1000000012")
                         .build()));
-        ArgumentCaptor<Account> captor = ArgumentCaptor.forClass(Account.class);
 
         //when
         AccountException exception = assertThrows(AccountException.class,
@@ -266,7 +264,6 @@ class AccountServiceTest {
                         .accountStatus(AccountStatus.UNREGISTERED)
                         .accountNumber("1000000012")
                         .build()));
-        ArgumentCaptor<Account> captor = ArgumentCaptor.forClass(Account.class);
 
         //when
         AccountException exception = assertThrows(AccountException.class,
